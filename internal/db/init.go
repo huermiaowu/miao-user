@@ -1,11 +1,11 @@
 package db
 
 import (
+	"github.com/huermiaowu/miao-user/internal/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/plugin/dbresolver"
 	"time"
-	"user/internal/config"
 )
 
 var DB *gorm.DB

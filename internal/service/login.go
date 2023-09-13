@@ -2,10 +2,10 @@ package service
 
 import (
 	"context"
+	"github.com/huermiaowu/miao-user/internal/db"
+	"github.com/huermiaowu/miao-user/internal/svc"
+	"github.com/huermiaowu/miao-user/pb"
 	"github.com/huerni/gmitex/pkg/errno"
-	"user/internal/db"
-	"user/internal/svc"
-	"user/pb"
 )
 
 type LoginService struct {

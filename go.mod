@@ -1,4 +1,4 @@
-module user
+module github.com/huermiaowu/miao-user
 
 go 1.20
 

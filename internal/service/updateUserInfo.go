@@ -2,12 +2,12 @@ package service
 
 import (
 	"context"
+	"github.com/huermiaowu/miao-user/internal/db"
 	"github.com/huerni/gmitex/pkg/errno"
 	"gorm.io/gorm"
-	"user/internal/db"
 
-	"user/internal/svc"
-	"user/pb"
+	"github.com/huermiaowu/miao-user/internal/svc"
+	"github.com/huermiaowu/miao-user/pb"
 )
 
 type UpdateUserInfoService struct {

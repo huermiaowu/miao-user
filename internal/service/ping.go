@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	"user/internal/svc"
-	"user/pb"
+	"github.com/huermiaowu/miao-user/internal/svc"
+	"github.com/huermiaowu/miao-user/pb"
 )
 
 type PingService struct {

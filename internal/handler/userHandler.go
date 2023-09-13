@@ -4,9 +4,9 @@ package handler
 
 import (
 	"context"
-	"user/internal/service"
-	"user/internal/svc"
-	"user/pb"
+	"github.com/huermiaowu/miao-user/internal/service"
+	"github.com/huermiaowu/miao-user/internal/svc"
+	"github.com/huermiaowu/miao-user/pb"
 )
 
 type UserServer struct {

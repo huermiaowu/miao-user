@@ -3,6 +3,9 @@ package app
 import (
 	"context"
 	"fmt"
+	"github.com/huermiaowu/miao-user/internal/config"
+	"github.com/huermiaowu/miao-user/internal/db"
+	"github.com/huermiaowu/miao-user/internal/router"
 	"github.com/huerni/gmitex/pkg/etcd"
 	"github.com/huerni/gmitex/pkg/gw/traefik"
 	"github.com/huerni/gmitex/pkg/server/gs"
@@ -12,9 +15,6 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"user/internal/config"
-	"user/internal/db"
-	"user/internal/router"
 )
 
 type GmServer struct {

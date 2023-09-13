@@ -3,11 +3,11 @@ package service
 import (
 	"context"
 	"fmt"
+	"github.com/huermiaowu/miao-user/internal/db"
 	"github.com/huerni/gmitex/pkg/errno"
-	"user/internal/db"
 
-	"user/internal/svc"
-	"user/pb"
+	"github.com/huermiaowu/miao-user/internal/svc"
+	"github.com/huermiaowu/miao-user/pb"
 )
 
 type GetUserInfoService struct {

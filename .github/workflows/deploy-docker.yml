@@ -2,6 +2,8 @@ name: Docker Image CI/CD
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   # 构建并上传 Docker镜像
   build: 

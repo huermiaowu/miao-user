@@ -1,0 +1,113 @@
+syntax = "proto3";
+option go_package = "./pb";
+package user;
+
+import "google/api/annotations.proto";
+
+enum ErrCode {
+  NormalCode                 = 0;
+  SuccessCode                = 200;
+  ServiceErrCode             = 500;
+  ParamErrCode               = 10002;
+
+  UserNotFoundCode = 20001;
+  LoginErrCode = 20002;
+  RegisterErrCode = 20003;
+}
+
+message PingReq {
+      string ping = 1;
+}
+
+message PingResp {
+      string pong = 1;
+}
+
+message UserInfo {
+  uint64 id = 1;
+  string username = 2;
+  string password = 3;
+  string email = 4;
+  string phone = 5;
+  string avaUrl = 6;
+  string signature = 7;
+}
+
+message LoginReq {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResp {
+  UserInfo userinfo  = 1;
+}
+
+message RegisterReq {
+  string username = 2;
+  string password = 3;
+  string email = 4;
+  string phone = 5;
+  string avaUrl = 6;
+  string signature = 7;
+}
+
+message RegisterResp {
+  UserInfo userinfo  = 1;
+}
+
+message GetUserInfoReq {
+  uint64 id = 1;
+}
+
+message GetUserInfoResp {
+  UserInfo userinfo  = 1;
+}
+
+message UpdateUserInfoReq {
+  uint64 id = 1;
+  string username = 2;
+  string password = 3;
+  string email = 4;
+  string phone = 5;
+  string avaUrl = 6;
+  string signature = 7;
+}
+
+message UpdateUserInfoResp {
+  UserInfo userinfo  = 1;
+}
+
+service user {
+      rpc Ping(PingReq) returns (PingResp) {
+            option (google.api.http) = {
+                  get: "/api/v1/user/ping"
+            };
+      };
+
+      rpc Login(LoginReq) returns (LoginResp) {
+        option (google.api.http) = {
+          post: "/api/v1/user/login",
+          body: "*"
+        };
+      }
+
+      rpc Register(RegisterReq) returns (RegisterResp) {
+        option (google.api.http) = {
+          post: "/api/v1/user/register"
+          body: "*"
+        };
+      }
+
+      rpc GetUserInfo(GetUserInfoReq) returns (GetUserInfoResp) {
+        option (google.api.http) = {
+          get: "/api/v1/user"
+        };
+      }
+
+      rpc UpdateUserInfo(UpdateUserInfoReq) returns (UpdateUserInfoResp) {
+        option (google.api.http) = {
+          post: "/api/v1/user/update"
+          body: "*"
+        };
+      }
+}
